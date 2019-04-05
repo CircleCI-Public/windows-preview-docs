@@ -1,0 +1,34 @@
+version: 2.1
+
+jobs:
+  windows-with-caching:
+    parallelism: 2
+    working_directory: c:\\cache
+    machine:
+      image: windows-server-2019
+      resource_class: windows.medium
+      shell: powershell.exe
+    steps:
+      - run: echo "Welcome to Windows on CircleCI"
+      - run: systeminfo
+      - run: "Get-ChildItem env:"
+      - restore_cache:
+          keys:
+            - sample-test-harness-{{ epoch }}
+            - sample-test-harness-
+      - run: Get-Content -Path "c:\cache\sample-test-harness.txt" -ErrorAction SilentlyContinue ; echo 'after'
+      - run: New-Item -ItemType file -Path "c:\cache\sample-test-harness.txt" -Force
+      - run: Out-File -FilePath "c:\cache\sample-test-harness.txt" -InputObject "Thrilling sample-test-harness contents :tada:"
+      - save_cache:
+          key: test-{{ epoch }}
+          paths:
+            - "c:\\cache"
+      - deploy:
+          command: echo 'ohai'
+      - store_artifacts:
+          path: "c:\\cache"
+
+workflows:
+  workflow:
+    jobs:
+      - windows-with-caching
