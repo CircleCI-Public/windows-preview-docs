@@ -4,7 +4,7 @@ Temporary docs on how to use the pre-release preview of Windows pipelines on Cir
 ## What are Windows pipelines?
 Historically, CircleCI has supported `docker`, `machine`, and `macos` [executors](https://circleci.com/docs/2.0/configuration-reference/#docker--machine--macosexecutor).
 
-With the introduction of our new Windows `resource_class` values, is now possible to run pipelines in a Windows build environment.
+With the introduction of our new Windows machine jobs, is now possible to run pipelines in a Windows build environment.
 
 ## Getting started
 ### Prerequisites
@@ -12,20 +12,17 @@ With the introduction of our new Windows `resource_class` values, is now possibl
 - [ ] Project has [pipelines enabled](https://circleci.com/docs/2.0/build-processing/)
 
 ### Configuration
-Once the prerequisite conditions are met, set up a standard `.circleci/config.yml` file and define a machine job with a Windows `image` and `resource_class`. 
-
-It is optional to define `shell` as either `powershell.exe` or `cmd.exe`.
+Once the prerequisite conditions are met, set up a standard `.circleci/config.yml` file and define a Windows executor. The preview orb provides a powershell `shell` by default. 
 
 ```
 version: 2.1
 
+orbs:
+  win: sandbox/windows-tools@dev:preview
+
 jobs:
   windows:
-    machine:
-      image: windows-server-2019
-      resource_class: windows.medium
-      shell: powershell.exe
-    steps:
+    executor: win/preview-default
       - ...
 ```
 

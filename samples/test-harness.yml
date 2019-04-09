@@ -1,13 +1,13 @@
 version: 2.1
 
+orbs:
+  win: sandbox/windows-tools@dev:preview
+
 jobs:
   windows-with-caching:
     parallelism: 2
     working_directory: c:\\cache
-    machine:
-      image: windows-server-2019
-      resource_class: windows.medium
-      shell: powershell.exe
+    executor: win/preview-default
     steps:
       - run: echo "Welcome to Windows on CircleCI"
       - run: systeminfo
