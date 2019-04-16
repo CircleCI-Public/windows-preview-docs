@@ -8,7 +8,7 @@ Temporary docs on how to use the pre-release preview of Windows jobs on CircleCI
 
 ## Please Read This Before Proceeding
 
-* Windows support on CircleCI is currently *in the preview phase*. This is *not* production-ready software. Please do not rely on the Windows support for your production needs right now.
+* Windows support on CircleCI is currently **in the preview phase**. This is **not** production-ready software. Please do not rely on the Windows support for your production needs right now.
 * As this is preview software, some product functionality has not yet been implemented. Some parts of the product might have bugs.
 * The functionality not yet available on Windows includes:
 	* the `deploy` step
@@ -16,7 +16,8 @@ Temporary docs on how to use the pre-release preview of Windows jobs on CircleCI
 	* Workspaces
 	* SSH into the job
 * You might see increased spin-up times for Windows jobs during the pre-release phase.
-* We are not ready to open up Windows support to the wider public yet, so please only use CircleCI for Windows in the *private repos in your org*. Please *do not* use CircleCI for Windows in open source repositories, and please do not share the examples of your Windows config outside your organization.
+* During preview, we might need to turn off all Windows jobs for a period from a few minutes to a few days. This is unlikely, but might be necessary if we need to perform infrastructure upgrades.
+* We are not ready to open up Windows support to the wider public yet, so please only use CircleCI for Windows in the **private repos in your org**. Please **do not** use CircleCI for Windows in open source repositories, and please do not share the examples of your Windows config outside your organization.
 * Please do not more than 2 Windows jobs concurrently during the preview phase.
 * Windows jobs are charged at 40 credits/minute. Please keep in mind that the pricing for Windows jobs can change in the future.
 
@@ -82,9 +83,6 @@ jobs:
           shell: powershell.exe
 ```
 
-
-          
-
 ## Questions and discussion
 We have a lengthy roadmap in place to port our most-loved features over to support Windows pipelines, and to add additional, Windows-specific features. We welcome your feedback on the existing beta product, and on design requests.
 
@@ -113,3 +111,11 @@ Not right now. If there are any specific optimizations in mind that would be use
 > Can I use Powershell in my CircleCI config? 
 
 Yes. The `win/preview-default` executor includes Powershell as the default shell. So in [this example](https://github.com/CircleCI-Public/windows-preview-docs/blob/master/samples/test-harness.yml#L13), the steps are being run as Powershell commands.
+
+### Reporting security issues
+
+We take the security of your applications seriously. In addition to our extensive internal testing, we have gone through an external security audit for the Windows platform before making it available to the preview users.
+
+If you believe you’ve found a security issue in CircleCI for Windows, please follow the instructions on this page to report the issue:
+
+[https://circleci.com/security/](https://circleci.com/security/)
