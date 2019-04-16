@@ -12,7 +12,15 @@ With the introduction of our new Windows machine jobs, is now possible to run jo
 - [ ] Your project has [pipelines enabled](https://circleci.com/docs/2.0/build-processing/)
 
 ### Configuration
-Once the prerequisite conditions are met, set up a standard `.circleci/config.yml` file and define a Windows executor. The preview orb provides a powershell `shell` by default. 
+Once the prerequisite conditions are met, set up a standard `.circleci/config.yml` file and define a Windows executor. The preview orb provides a powershell `shell` by default.
+
+To view the source code for our preview orb, install our CLI tool and run:
+
+```bash
+circleci-cli orb source sandbox/windows-tools@dev:preview
+```
+
+Here is how the `.circleci/config.yml` file would look like with a Windows executor:
 
 ```YAML
 version: 2.1
@@ -34,7 +42,7 @@ With this executor in place, define the rest of the configuration file to meet t
 
 ### Shells
 
-There are three shells that you can use to run job steps on Windows. You can use PowerShell, Bash or Command. You can specify the required shell as a parameter of the executor, and you can also override the shell per step.
+There are three shells that you can use to run job steps on Windows: PowerShell, Bash or Command. You can specify the required shell as a parameter of the executor, and you can also override the shell per step.
 
 ```YAML
 version: 2.1
