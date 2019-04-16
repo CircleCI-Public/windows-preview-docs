@@ -17,6 +17,8 @@ Temporary docs on how to use the pre-release preview of Windows jobs on CircleCI
 	* SSH into the job
 * You might see increased spin-up times for Windows jobs during the pre-release phase.
 * We are not ready to open up Windows support to the wider public yet, so please only use CircleCI for Windows in the *private repos in your org*. Please *do not* use CircleCI for Windows in open source repositories, and please do not share the examples of your Windows config outside your organization.
+* Please do not more than 2 Windows jobs concurrently during the preview phase.
+* Windows jobs are charged at 40 credits/minute. Please keep in mind that the pricing for Windows jobs can change in the future.
 
 ## What are Windows pipelines?
 Historically, CircleCI has supported `docker`, `machine`, and `macos` [executors](https://circleci.com/docs/2.0/configuration-reference/#docker--machine--macosexecutor).
