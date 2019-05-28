@@ -30,15 +30,39 @@ Windows jobs run in dedicated VMs, similar to the `machine` executor. A VM gets 
 
 ## Getting started
 
-### Configuration
+### Hello, World! with the Windows Orb
 
-Once the prerequisite conditions are met, set up a standard `.circleci/config.yml` file and define a Windows executor. The preview orb provides a powershell `shell` by default.
+```YAML
+version: 2.1
 
-To view the source code for our preview orb, install our CLI tool and run:
+orbs:
+  win: sandbox/windows-tools@dev:preview
+
+jobs:
+  build:
+    executor: win/preview-default
+    steps:
+      - checkout
+      - run: echo 'Hello, Windows'
+```
+
+Just paste this snippet into the `.circleci/config.yml` file in your Windows project to run a `Hello, Windows!` example.
+
+### The Windows orb
+
+The Windows Orb (the `sandbox/windows-tools@dev:preview` string) is the easiest way to get started with Windows. It provides a default set of options that you can customise. 
+
+To view the source code for our preview orb, [install our CLI tool](https://circleci.com/docs/2.0/local-cli/#installation) and run:
 
 ```bash
 circleci-cli orb source sandbox/windows-tools@dev:preview
 ```
+
+[Learn more about Orbs here.](https://circleci.com/orbs/)
+
+### Configuration
+
+Once the prerequisite conditions are met, set up a standard `.circleci/config.yml` file and define a Windows executor. The preview orb provides a powershell `shell` by default.
 
 Here is how the `.circleci/config.yml` file would look like with a Windows executor:
 
@@ -62,7 +86,15 @@ With this executor in place, define the rest of the configuration file to meet t
 
 ### Shells
 
-There are three shells that you can use to run job steps on Windows: PowerShell, Bash or Command. You can specify the required shell as a parameter of the executor, and you can also override the shell per step.
+There are three shells that you can use to run job steps on Windows:
+
+* PowerShell (default in the Windows Orb)
+* Bash
+* Command
+
+You can configure the shell at the job level or at the step level. So you can mix Bash and Powershell in the same job.
+
+If you’d like to use Bash or Command instead of Powershell, add a `shell:` argument in the `executor:` section at the job level or in the step declaration:
 
 ```YAML
 version: 2.1
@@ -87,6 +119,7 @@ jobs:
 ```
 
 ## Questions and discussion
+
 We have a lengthy roadmap in place to port our most-loved features over to support Windows pipelines, and to add additional, Windows-specific features. We welcome your feedback on the existing beta product, and on design requests.
 
 Please discuss Windows design in the Issues section of this repo.
