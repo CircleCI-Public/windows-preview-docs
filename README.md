@@ -1,34 +1,37 @@
 # Windows on CircleCI Preview Docs
-Temporary docs on how to use the pre-release preview of Windows jobs on CircleCI.
+Temporary docs on how to use the pre-release preview of Windows jobs on CircleCI. We will publish these docs in the main Docs section of our website soon.
 
 ## Prerequisites to try out Windows on CircleCI
 
-- [ ] Your organization is using a [performance plan](https://circleci.com/pricing/usage/)
+- [ ] Your organization is using a [Performance plan](https://circleci.com/pricing/usage/) or is on a Performance plan trial
 - [ ] Your project has [pipelines enabled](https://circleci.com/docs/2.0/build-processing/)
 
 ## Please Read This Before Proceeding
 
 * Windows support on CircleCI is currently **in the preview phase**. This is **not** production-ready software. Please do not rely on the Windows support for your production needs right now.
 * As this is preview software, some product functionality has not yet been implemented. Some parts of the product might have bugs.
-* The functionality not yet available on Windows includes:
+* The functionality not yet available on Windows is:
 	* the `deploy` step
 	* Docker support
-	* Workspaces
-	* SSH into the job
+	* Remote Docker
+	* Docker Layer Caching
+* The standard functionality like caching, workspaces, SSH into the build is available for Windows jobs today. If you see any issues when using these features, those are probably bugs. Please let us know if you find those.
 * You might see increased spin-up times for Windows jobs during the pre-release phase.
-* During preview, we might need to turn off all Windows jobs for a period from a few minutes to a few days. This is unlikely, but might be necessary if we need to perform infrastructure upgrades.
-* We are not ready to open up Windows support to the wider public yet, so please only use CircleCI for Windows in the **private repos in your org**. Please **do not** use CircleCI for Windows in open source repositories, and please do not share the examples of your Windows config outside your organization.
-* Please do not more than 2 Windows jobs concurrently during the preview phase.
-* Windows jobs are charged at 40 credits/minute. Please keep in mind that the pricing for Windows jobs can change in the future.
+	* This is temporary while we prepare our systems for production load.
+* During preview, we might need to turn off all Windows jobs for a period from a few minutes to a few days. This is very unlikely, but might be necessary if we need to perform infrastructure upgrades.
+* If you are on a **Performance plan**, Windows jobs are charged at 40 credits/minute. If you are on a **Performance trial**, you won’t be charged. Please keep in mind that the pricing for Windows jobs can change in the future.
 
 ## What are Windows pipelines?
 Historically, CircleCI has supported `docker`, `machine`, and `macos` [executors](https://circleci.com/docs/2.0/configuration-reference/#docker--machine--macosexecutor).
 
 With the introduction of our new Windows machine jobs, is now possible to run jobs in your pipelines in a Windows environment.
 
+Windows jobs run in dedicated VMs, similar to the `machine` executor. A VM gets created for your Windows job, and gets destroyed once the job finishes.
+
 ## Getting started
 
 ### Configuration
+
 Once the prerequisite conditions are met, set up a standard `.circleci/config.yml` file and define a Windows executor. The preview orb provides a powershell `shell` by default.
 
 To view the source code for our preview orb, install our CLI tool and run:
