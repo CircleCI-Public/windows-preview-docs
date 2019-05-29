@@ -6,6 +6,10 @@ Temporary docs on how to use the pre-release preview of Windows jobs on CircleCI
 - [ ] Your organization is using a [Performance plan](https://circleci.com/pricing/usage/) or is on a Performance plan trial
 - [ ] Your project has [pipelines enabled](https://circleci.com/docs/2.0/build-processing/)
 
+## Requesting access to Windows Preview
+
+If you would like to request access to Windows preview, please do so [in this Google Form](https://docs.google.com/forms/d/e/1FAIpQLSfspug2MP0eTK8eRC1_FpiDQzNHkk8a36fflN_za29CwGzGoQ/viewform?usp=sf_link), and we’ll get in touch as soon as possible.
+
 ## Please Read This Before Proceeding
 
 * Windows support on CircleCI is currently **in the preview phase**. This is **not** production-ready software. Please do not rely on the Windows support for your production needs right now.
