@@ -60,7 +60,7 @@ The Windows Orb (the `sandbox/windows-tools@dev:preview` string) is the easiest 
 To view the source code for our preview orb, [install our CLI tool](https://circleci.com/docs/2.0/local-cli/#installation) and run:
 
 ```bash
-circleci-cli orb source sandbox/windows-tools@dev:preview
+circleci orb source sandbox/windows-tools@dev:preview
 ```
 
 [Learn more about Orbs here.](https://circleci.com/orbs/)
