@@ -25,7 +25,8 @@ If you would like to request access to Windows preview, please do so [in this Go
 * During preview, we might need to turn off all Windows jobs for a period from a few minutes to a few days. This is very unlikely, but might be necessary if we need to perform infrastructure upgrades.
 * If you are on a **Performance plan**, Windows jobs are charged at 40 credits/minute. If you are on a **Performance trial**, you won’t be charged. Please keep in mind that the pricing for Windows jobs can change in the future.
 
-## What are Windows pipelines?
+## What are Windows jobs?
+
 Historically, CircleCI has supported `docker`, `machine`, and `macos` [executors](https://circleci.com/docs/2.0/configuration-reference/#docker--machine--macosexecutor).
 
 With the introduction of our new Windows machine jobs, is now possible to run jobs in your pipelines in a Windows environment.
