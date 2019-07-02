@@ -16,8 +16,6 @@ If you would like to request access to Windows preview, please do so [in this Go
 * As this is preview software, some product functionality has not yet been implemented. Some parts of the product might have bugs.
 * The functionality not yet available on Windows is:
 	* the `deploy` step
-	* Docker support
-	* Remote Docker
 	* Docker Layer Caching
 * The standard functionality like caching, workspaces, SSH into the build is available for Windows jobs today. If you see any issues when using these features, those are probably bugs. Please let us know if you find those.
 * You might see increased spin-up times for Windows jobs during the pre-release phase.
