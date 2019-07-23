@@ -41,7 +41,7 @@ Windows jobs run in dedicated VMs, similar to the `machine` executor. A VM gets 
 version: 2.1
 
 orbs:
-  win: sandbox/windows-tools@dev:preview
+  win: circleci/windows-tools@0.0.4
 
 jobs:
   build:
@@ -105,7 +105,7 @@ If you’d like to use Bash or Command instead of Powershell, add a `shell:` arg
 version: 2.1
 
 orbs:
-  win: sandbox/windows-tools@dev:preview
+  win: circleci/windows-tools@0.0.4
 
 jobs:
   build:
