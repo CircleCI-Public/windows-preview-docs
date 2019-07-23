@@ -75,7 +75,7 @@ Here is how the `.circleci/config.yml` file would look like with a Windows execu
 version: 2.1
 
 orbs:
-  win: sandbox/windows-tools@dev:preview
+  win: circleci/windows-tools@0.0.4
 
 jobs:
   build:
