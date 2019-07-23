@@ -12,17 +12,8 @@ If you would like to request access to Windows preview, please do so [in this Go
 
 ## Please Read This Before Proceeding
 
-* Windows support on CircleCI is currently **in the preview phase**. This is **not** production-ready software. Please do not rely on the Windows support for your production needs right now.
-* As this is preview software, some product functionality has not yet been implemented. Some parts of the product might have bugs.
-* The functionality not yet available on Windows is:
-	* the `deploy` step
-	* Docker support
-	* Remote Docker
-	* Docker Layer Caching
-* The standard functionality like caching, workspaces, SSH into the build is available for Windows jobs today. If you see any issues when using these features, those are probably bugs. Please let us know if you find those.
-* You might see increased spin-up times for Windows jobs during the pre-release phase.
-	* This is temporary while we prepare our systems for production load.
-* During preview, we might need to turn off all Windows jobs for a period from a few minutes to a few days. This is very unlikely, but might be necessary if we need to perform infrastructure upgrades.
+* Windows support on CircleCI is currently **in the preview phase**. Some parts of the product might have bugs.
+* The standard functionality like caching, workspaces, SSH into the build is available for Windows jobs today. If you see any issues when using these features, those are probably bugs. Please file an issue on this repository if you run into any issues.
 * If you are on a **Performance plan**, Windows jobs are charged at 40 credits/minute. If you are on a **Performance trial**, you won’t be charged. Please keep in mind that the pricing for Windows jobs can change in the future.
 
 ## What are Windows jobs?
