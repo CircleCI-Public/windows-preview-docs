@@ -24,6 +24,17 @@ With the introduction of our new Windows machine jobs, is now possible to run jo
 
 Windows jobs run in dedicated VMs, similar to the `machine` executor. A VM gets created for your Windows job, and gets destroyed once the job finishes.
 
+## What software is available in the Windows VMs?
+
+Right now we offer a single Windows image, with the following contents:
+
+* `windows-server-2019`
+  * Based on Windows Server 2019.
+  * Docker Enterprise Edition with support for Docker 1809 Windows containers. Linux containers on Windows are currently not supported.
+  * Chocolatey, NuGet.
+  
+We are already working on adding the most commonly requested dependencies like .NET Framework and Visual Studio to the Windows image.
+
 ## Getting started
 
 ### Hello, World! with the Windows Orb
