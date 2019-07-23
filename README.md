@@ -12,17 +12,8 @@ If you would like to request access to Windows preview, please do so [in this Go
 
 ## Please Read This Before Proceeding
 
-* Windows support on CircleCI is currently **in the preview phase**. This is **not** production-ready software. Please do not rely on the Windows support for your production needs right now.
-* As this is preview software, some product functionality has not yet been implemented. Some parts of the product might have bugs.
-* The functionality not yet available on Windows is:
-	* the `deploy` step
-	* Docker support
-	* Remote Docker
-	* Docker Layer Caching
-* The standard functionality like caching, workspaces, SSH into the build is available for Windows jobs today. If you see any issues when using these features, those are probably bugs. Please let us know if you find those.
-* You might see increased spin-up times for Windows jobs during the pre-release phase.
-	* This is temporary while we prepare our systems for production load.
-* During preview, we might need to turn off all Windows jobs for a period from a few minutes to a few days. This is very unlikely, but might be necessary if we need to perform infrastructure upgrades.
+* Windows support on CircleCI is currently **in the preview phase**. Some parts of the product might have bugs.
+* The standard functionality like caching, workspaces, SSH into the build is available for Windows jobs today. If you see any issues when using these features, those are probably bugs. Please file an issue on this repository if you run into any issues.
 * If you are on a **Performance plan**, Windows jobs are charged at 40 credits/minute. If you are on a **Performance trial**, you won’t be charged. Please keep in mind that the pricing for Windows jobs can change in the future.
 
 ## What are Windows jobs?
@@ -32,6 +23,17 @@ Historically, CircleCI has supported `docker`, `machine`, and `macos` [executors
 With the introduction of our new Windows machine jobs, is now possible to run jobs in your pipelines in a Windows environment.
 
 Windows jobs run in dedicated VMs, similar to the `machine` executor. A VM gets created for your Windows job, and gets destroyed once the job finishes.
+
+## What software is available in the Windows VMs?
+
+Right now we offer a single Windows image, with the following contents:
+
+* `windows-server-2019`
+  * Based on Windows Server 2019.
+  * Docker Enterprise Edition with support for Docker 1809 Windows containers. Linux containers on Windows are currently not supported.
+  * Chocolatey, NuGet.
+  
+We are already working on adding the most commonly requested dependencies like .NET Framework and Visual Studio to the Windows image.
 
 ## Getting started
 
@@ -55,12 +57,12 @@ Just paste this snippet into the `.circleci/config.yml` file in your Windows pro
 
 ### The Windows orb
 
-The Windows Orb (the `sandbox/windows-tools@dev:preview` string) is the easiest way to get started with Windows. It provides a default set of options that you can customise. 
+The Windows Orb (the `circleci/windows-tools@0.0.4` string) is the easiest way to get started with Windows. It provides a default set of options that you can customise. 
 
 To view the source code for our preview orb, [install our CLI tool](https://circleci.com/docs/2.0/local-cli/#installation) and run:
 
 ```bash
-circleci-cli orb source sandbox/windows-tools@dev:preview
+circleci-cli orb source circleci/windows-tools@0.0.4
 ```
 
 [Learn more about Orbs here.](https://circleci.com/orbs/)
