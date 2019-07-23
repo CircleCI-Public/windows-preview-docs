@@ -57,12 +57,12 @@ Just paste this snippet into the `.circleci/config.yml` file in your Windows pro
 
 ### The Windows orb
 
-The Windows Orb (the `sandbox/windows-tools@dev:preview` string) is the easiest way to get started with Windows. It provides a default set of options that you can customise. 
+The Windows Orb (the `circleci/windows-tools@0.0.4` string) is the easiest way to get started with Windows. It provides a default set of options that you can customise. 
 
 To view the source code for our preview orb, [install our CLI tool](https://circleci.com/docs/2.0/local-cli/#installation) and run:
 
 ```bash
-circleci-cli orb source sandbox/windows-tools@dev:preview
+circleci-cli orb source circleci/windows-tools@0.0.4
 ```
 
 [Learn more about Orbs here.](https://circleci.com/orbs/)
