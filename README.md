@@ -35,6 +35,10 @@ Right now we offer a single Windows image, with the following contents:
   
 We are already working on adding the most commonly requested dependencies like .NET Framework and Visual Studio to the Windows image.
 
+**NOTE** The following features/software is not currently available for the Windows executor:
+
+- Docker Layer Caching
+
 ## Getting started
 
 ### Hello, World! with the Windows Orb
