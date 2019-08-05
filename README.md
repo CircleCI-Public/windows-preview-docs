@@ -47,7 +47,7 @@ We are already working on adding the most commonly requested dependencies like .
 version: 2.1
 
 orbs:
-  win: circleci/windows-tools@0.0.4
+  win: circleci/windows-tools@0.0.5
 
 jobs:
   build:
@@ -61,12 +61,12 @@ Just paste this snippet into the `.circleci/config.yml` file in your Windows pro
 
 ### The Windows orb
 
-The Windows Orb (the `circleci/windows-tools@0.0.4` string) is the easiest way to get started with Windows. It provides a default set of options that you can customise. 
+The Windows Orb (the `circleci/windows-tools@0.0.5` string) is the easiest way to get started with Windows. It provides a default set of options that you can customise. 
 
 To view the source code for our preview orb, [install our CLI tool](https://circleci.com/docs/2.0/local-cli/#installation) and run:
 
 ```bash
-circleci-cli orb source circleci/windows-tools@0.0.4
+circleci-cli orb source circleci/windows-tools@0.0.5
 ```
 
 [Learn more about Orbs here.](https://circleci.com/orbs/)
@@ -81,7 +81,7 @@ Here is how the `.circleci/config.yml` file would look like with a Windows execu
 version: 2.1
 
 orbs:
-  win: circleci/windows-tools@0.0.4
+  win: circleci/windows-tools@0.0.5
 
 jobs:
   build:
@@ -111,7 +111,7 @@ If you’d like to use Bash or Command instead of Powershell, add a `shell:` arg
 version: 2.1
 
 orbs:
-  win: circleci/windows-tools@0.0.4
+  win: circleci/windows-tools@0.0.5
 
 jobs:
   build:
